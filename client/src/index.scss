@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    @apply py-2 px-3 text-white flex items-center
+}
+
+.btn-outline {
+    @apply rounded-md bg-slate-blue hover:bg-light-blue hover:text-black
+}
+
+.btn-ghost {
+    @apply  bg-slate-blue hover:bg-light-blue py-2 text-xs font-bold
+}
+
+.btn-tags {
+    @apply bg-pale-dark hover:bg-slate-blue py-1 text-xs
+} 
+
+.btn-subscribe {
+    @apply bg-light-gray hover:bg-slate-blue hover:text-white py-2 text-black font-medium w-full text-base flex items-center justify-center
+} 
+
+.btn-cloud {
+    @apply border hover:bg-slate-blue hover:text-white py-1 text-black  text-xs flex items-center justify-center
+} 
+
+
+
+.half-triangle {
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent; 
+    border-left: 25px solid #757575;
+    position: relative;
+  }
+  
+.half-triangle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border-top: 35px solid transparent; 
+    border-left: 35px solid white;
+}
+  
