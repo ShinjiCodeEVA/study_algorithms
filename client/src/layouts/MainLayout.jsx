@@ -1,23 +1,51 @@
 import Sidebar from "./Sidebar"
 import Rightbar from "./Rightbar"
 import Navbar from "./Navbar"
+import { useState, useEffect } from "react"
 
 //ml-[22em]
-
+// mr-[300px]
 const MainLayout = ({children}) => {
+
+  const [isSidebarHidden, setIsSidebarHidden] = useState(false);
+  
+  useEffect(() => {
+    const breakpoint = window.matchMedia("(max-width: 950px)");
+
+    const handleResize = () => {
+      if (breakpoint.matches) {
+        setIsSidebarHidden(true);
+      } else {
+        setIsSidebarHidden(false);
+      }
+    };
+
+    handleResize(); 
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);     
+    };
+  }, []);
+
   return (
-    <main className="">
+    <main>
       <section>
-        <Sidebar />
+        <Sidebar isSidebarHidden={isSidebarHidden} />
       </section>
-      <div className="ml-[330px]"> 
+      <div className={`${isSidebarHidden ? 'ml-0' :'ml-[330px] ' } transition-all`}> 
         <section>
           <Navbar />
         </section>
-        <section className="mr-[300px]">{children}</section>
-        <section>
-          <Rightbar />
-        </section>
+        <div className="xl:flex">
+          <section className="">
+            {children}
+          </section>
+          <section>
+            <Rightbar />
+          </section>
+        </div>
       </div>
     </main>
   )

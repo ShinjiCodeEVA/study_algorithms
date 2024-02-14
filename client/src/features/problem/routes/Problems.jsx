@@ -8,8 +8,6 @@ export const Problems = () => {
   const [ location ] = useViewProblems()
   const  viewedProblems  = useProblemStore(state => state.viewedProblems)
 
-  console.log(viewedProblems)
-
   return (
     <div className="px-9 mt-6">  
         <h1 className="text-center text-2xl font-semibold">
@@ -23,6 +21,8 @@ export const Problems = () => {
               return (
                 <Problem
                   key={index}
+                  id={problem.id}
+                  index={index}
                   tags={problem.tags[0]}
                   title={problem.title}
                   readTime={problem.readTime}

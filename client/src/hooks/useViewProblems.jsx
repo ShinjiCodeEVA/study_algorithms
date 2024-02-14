@@ -6,9 +6,7 @@ import { useEffect } from "react"
 export const useViewProblems = () => {
     
     const location = useLocation()
-
-    console.log(location.pathname)
-
+    
     useEffect(() => {
         switch (location.pathname) {
           case "/category/array":

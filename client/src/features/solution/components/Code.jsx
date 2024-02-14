@@ -1,6 +1,6 @@
 
 
-export const Code = () => {
+export const Code = ({replit}) => {
   return (
     <div className="mt-4">
         <h2 className="text-slate-blue text-2xl font-semibold">Code</h2>

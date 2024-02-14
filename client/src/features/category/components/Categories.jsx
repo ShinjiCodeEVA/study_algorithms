@@ -2,7 +2,7 @@ import { Category } from "./Category"
 import { links } from "./links"
 import { Link } from "../../../components/Elements" 
 
-export const Categories = () => {
+export const Categories = ({setShowSideNav}) => {
 
   return (
     <div>
@@ -10,6 +10,7 @@ export const Categories = () => {
             return (
                 <Link key={index} path={link.path}>
                   <Category
+                      setShowSideNav={setShowSideNav}
                       title={link.title}
                       index={index}
                       path={link.path}

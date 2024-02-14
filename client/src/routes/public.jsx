@@ -12,7 +12,7 @@ export const publicRoutes = [
         element: <Problems />
     },
     {
-      path: '/category/:categoryName/:title',
+      path: '/category/:categoryName/:id',
       element: <Solutions />
   },
 ];

@@ -36,6 +36,7 @@
     border-top: 35px solid transparent; 
     border-left: 25px solid #757575;
     position: relative;
+    z-index: -99;
   }
   
 .half-triangle::after {
@@ -49,3 +50,13 @@
     border-left: 35px solid white;
 }
   
+.hide {
+    transform: translateX(-100%);
+    // transition: transform 1000ms;
+}
+
+.show {
+    transform: translateX(0);
+    // transition: transform 1000ms;
+}
+

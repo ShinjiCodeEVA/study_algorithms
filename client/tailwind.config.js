@@ -16,6 +16,10 @@ export default {
         'pale-dark': "#757575",
         'slate-gray': "#dedede",
         'light-gray': "#f4f4f4"
+      },
+      screens: {
+        '2-md': "950px",
+        '3-md': "655px"
       }
     },
   },

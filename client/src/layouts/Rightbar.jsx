@@ -4,9 +4,10 @@ import { InputField } from "../components/Form"
 import { TagList } from "../features/tags"
 import { HalfTriangle } from "../components/UI"
 
+//absolute right-0 w-[300px] top-40 px-4
 const Rightbar = () => {
   return (
-    <div className="absolute right-0 w-[300px] top-40 px-4">
+    <div className="xl:w-[300px] w-full  mt-10 px-4">
       <div className="flex border-b-2 border-slate-blue">
         <Button variant="ghost">VIDEOS</Button>
         <HalfTriangle/>
@@ -18,7 +19,7 @@ const Rightbar = () => {
       </div>
       
       <div className="mt-7">
-        <PostList/>
+        <PostList/>    
       </div>
 
       <div>
@@ -36,7 +37,7 @@ const Rightbar = () => {
       </div>
 
       <div className="mt-12">
-        <div className="mt-16 flex border-b-2 border-slate-blue">
+        <div className="mt-16 flex border-b-2 border-slate-blue"> 
           <Button variant="ghost">TAG CLOUD</Button>
           <HalfTriangle/>
         </div>
