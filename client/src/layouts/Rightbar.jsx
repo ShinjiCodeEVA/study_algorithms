@@ -4,7 +4,6 @@ import { InputField } from "../components/Form"
 import { TagList } from "../features/tags"
 import { HalfTriangle } from "../components/UI"
 
-//absolute right-0 w-[300px] top-40 px-4
 const Rightbar = () => {
   return (
     <div className="xl:w-[300px] w-full  mt-10 px-4">

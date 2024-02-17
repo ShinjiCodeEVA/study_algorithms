@@ -3,8 +3,6 @@ import Rightbar from "./Rightbar"
 import Navbar from "./Navbar"
 import { useState, useEffect } from "react"
 
-//ml-[22em]
-// mr-[300px]
 const MainLayout = ({children}) => {
 
   const [isSidebarHidden, setIsSidebarHidden] = useState(false);
@@ -39,7 +37,7 @@ const MainLayout = ({children}) => {
           <Navbar />
         </section>
         <div className="xl:flex">
-          <section className="">
+          <section>
             {children}
           </section>
           <section>

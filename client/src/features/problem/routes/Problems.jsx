@@ -1,12 +1,22 @@
 import { Problem } from "../components"
-import { useViewProblems } from "../../../hooks/useViewProblems"
-import { useProblemStore } from "../../../stores/useProblemStore" 
-
+import { useProblemStore } from "../../../stores"  
+import { useLocation } from "react-router-dom"
+import { useEffect } from "react"
+import { useFetchProblems } from "../hooks"
 
 export const Problems = () => {
 
-  const [ location ] = useViewProblems()
-  const  viewedProblems  = useProblemStore(state => state.viewedProblems)
+  const viewedProblems  = useProblemStore(state => state.viewedProblems)
+  const [fetchProblems] = useFetchProblems()
+  const location = useLocation()
+
+  
+
+  useEffect(() => {
+    fetchProblems(location?.pathname.split('/')[2])
+  }, [])
+
+  
 
   return (
     <div className="px-9 mt-6">  

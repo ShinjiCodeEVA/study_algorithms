@@ -14,7 +14,7 @@ export const Problem = ({id, tags, index, title, readTime, description}) => {
 
   return (
     <div className={`flex flex-col gap-4 items-start mb-10 ${index !== 0 ? 'border-t-[1px]' : ''}`}>
-        <div className={index !== 0 && 'mt-4'}></div>
+        <div className={index !== 0 ? 'mt-4': ''}></div>
         <Button variant="tags">{tag}</Button>
         <h3 className="font-semibold text-lg mb-[-10px]">{`[LeetCode] - ${title}`}</h3>
         <small className="text-gray-400">{readTime} mins read</small>
@@ -22,7 +22,7 @@ export const Problem = ({id, tags, index, title, readTime, description}) => {
         <article>
             {description}
         </article>  
-        <Link path={`/category/${tag.toLowerCase()}/${id}`}>  
+        <Link path={`/category/${tag?.toLowerCase()}/${id}`}>  
             <Button variant="ghost">
                 READ MORE
                 <div className="ml-2 flex text-xs">
