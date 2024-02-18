@@ -10,7 +10,7 @@ import { useViewedSolution } from "../hooks/useViewedSolution"
 
 
 // todo: pass all the required fields to the components of solution
-const Solutions = () => {
+export const Solutions = () => {
 
   const { categoryName, id } = useParams()
   
@@ -61,5 +61,3 @@ const Solutions = () => {
     </div>
   )
 }
-
-export default Solutions
