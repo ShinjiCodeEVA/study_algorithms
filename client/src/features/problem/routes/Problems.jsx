@@ -10,13 +10,9 @@ export const Problems = () => {
   const [fetchProblems] = useFetchProblems()
   const location = useLocation()
 
-  
-
   useEffect(() => {
     fetchProblems(location?.pathname.split('/')[2])
   }, [])
-
-  
 
   return (
     <div className="px-9 mt-6">  
@@ -33,7 +29,7 @@ export const Problems = () => {
                   key={index}
                   id={problem.id}
                   index={index}
-                  tags={problem.tags[0]}
+                  tags={problem.tags}
                   title={problem.title}
                   readTime={problem.readTime}
                   description={problem.description}

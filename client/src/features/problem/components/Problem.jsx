@@ -9,20 +9,19 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { FaWhatsapp } from "react-icons/fa";
 
 export const Problem = ({id, tags, index, title, readTime, description}) => {
- 
-  const tag = tags.substring(0, 1).toUpperCase() + tags.substring(1)
+
 
   return (
     <div className={`flex flex-col gap-4 items-start mb-10 ${index !== 0 ? 'border-t-[1px]' : ''}`}>
         <div className={index !== 0 ? 'mt-4': ''}></div>
-        <Button variant="tags">{tag}</Button>
+        <Button variant="tags">{tags}</Button>
         <h3 className="font-semibold text-lg mb-[-10px]">{`[LeetCode] - ${title}`}</h3>
         <small className="text-gray-400">{readTime} mins read</small>
         <div className="border border-slate-blue w-[40px]"></div>
         <article>
             {description}
         </article>  
-        <Link path={`/category/${tag?.toLowerCase()}/${id}`}>  
+        <Link path={`/category/${tags?.toLowerCase()}/${id}`}>  
             <Button variant="ghost">
                 READ MORE
                 <div className="ml-2 flex text-xs">

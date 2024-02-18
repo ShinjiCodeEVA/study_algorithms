@@ -1,10 +1,12 @@
+import { useEffect } from "react"
+import { useParser } from "../../../hooks/useParser"
+
+export const Heading = ({title, platform, readTime}) => {
 
 
-export const Heading = () => {
   return (
     <div>
-         <h1 className="text-slate-blue text-2xl font-semibold">[LeetCode] - Maximum Product Subarray Solution</h1>
-         
+         <h1 className="text-slate-blue text-2xl font-semibold">{`[${platform}] - ${title}`}</h1>
          <div className="flex items-center gap-3 text-gray-400 mt-1">
            <span>
              <small>by</small>
@@ -19,7 +21,7 @@ export const Heading = () => {
              <div className="h-[15px] mt-1 bg-gray-400 border"></div>
            </span>
            <span className="flex item-center gap-5">
-             <p className="text-md">10 mins read</p>
+             <p className="text-md">{readTime} mins read</p>
            </span>
          </div>
     </div>
