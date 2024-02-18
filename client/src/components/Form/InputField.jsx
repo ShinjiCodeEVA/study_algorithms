@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 export const InputField = ({placeholder, icon, className, onChange}) => {
 
-  const merge = clsx("outline-none text-sm", className)
+  const merge = clsx("outline-none text-sm w-full", className)
 
   return (
     <FieldWrapper icon={icon}>

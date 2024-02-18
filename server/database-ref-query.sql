@@ -16,7 +16,7 @@ VALUES ("To solve this problem, you can utilize the dynamic programming approach
 SET @efficientId = LAST_INSERT_ID(); 
   
 INSERT INTO bruteforce (heading, steps, summary, image)
-VALUES ("The brute force approach to finding the maximum product subarray involves checking all possible subarrays and calculating their products to find the maximum product.",
+VALUES ("The brute for             ce approach to finding the maximum product subarray involves checking all possible subarrays and calculating their products to find the maximum product.",
 		"Initialize a variable max_product to store the maximum product, initially set to the minimum possible value.
                 Iterate through all possible starting indices of the subarray.
                 For each starting index, iterate through all possible ending indices greater than or equal to the starting index.

@@ -2,6 +2,7 @@ import FieldWrapper from "../../../components/Form/FieldWrapper";
 import { InputField } from "../../../components/Form";
 import { TextArea } from "../../../components/Form";
 import { useReducer } from "react";
+import { useCreateEntry } from "../hooks";
 
 const initialState = {
   title: "",
@@ -41,6 +42,7 @@ const reducer = (state, action) => {
 export const EntryCreation = () => { 
   
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [createEntry] = useCreateEntry()
 
   const handleChange = (field, value) => {
     dispatch({ type: "SET_FIELD", field, value })
@@ -83,6 +85,7 @@ export const EntryCreation = () => {
     }
 
     console.log(entry)
+    createEntry(entry)
   }
 
   return (
