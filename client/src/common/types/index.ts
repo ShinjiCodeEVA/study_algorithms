@@ -1,6 +1,6 @@
 export type CategoryType = {
     label: string;
-    index: number;
+    index?: number;
 }
 
 export type RecentPostType = {
@@ -11,4 +11,12 @@ export type RecentPostType = {
 
 export type NewsLetterType = {
     email: string;
+} 
+
+export type ProblemType = {
+    tags: string[];
+    platform: string;
+    title: string;
+    readTime: number;
+    description: string; 
 }
