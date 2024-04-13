@@ -10,16 +10,11 @@ export default {
         'body-font': ['Open Sans', 'sans-serif']
       },
       colors: {
+        'gray-white': "#d8d8d8",
+        'slate-white': "#f4f4f4",
+        'dark-gray': "#757575",
         'slate-blue': "#0b6bbf",
-        'light-blue': "#00d2ff",
-        'slate-dark': "#313131",
-        'pale-dark': "#757575",
-        'slate-gray': "#dedede",
-        'light-gray': "#f4f4f4"
-      },
-      screens: {
-        '2-md': "950px",
-        '3-md': "655px"
+        'slate-black': "#313131"
       }
     },
   },
