@@ -20,10 +20,10 @@ const socs = [
 ]
 
 export const AppBar = ({toggleSideBar}: AppBarProp) => {
-    
+      
     
   return (
-    <header className={`bg-slate-black flex lg:flex-row gap-4 lg:gap-0 flex-col py-3 lg:py-0 items-center justify-center lg:justify-between laptop:ml-[330px] text-white px-9 mr-[-30px] desktop:mr-0`}>
+    <header className={`bg-slate-black flex lg:flex-row gap-4 lg:gap-0 flex-col py-3 lg:py-0 items-center justify-center lg:justify-between laptop:ml-[330px] text-white px-9  `}>
         <div 
             className="triangle desktop:pointer-events-none"
             onClick={toggleSideBar} >
@@ -37,7 +37,6 @@ export const AppBar = ({toggleSideBar}: AppBarProp) => {
                     <p>TOP POSTS</p>
                 </div>
                 <div className={`flex items-center text-[12px] text-dark-gray cursor-pointer`}>
-                    <Icon><FaAngleLeft className="hover:text-white" /></Icon>
                     <Icon><FaAngleRight className="hover:text-white" /></Icon>
                 </div>
             </div>

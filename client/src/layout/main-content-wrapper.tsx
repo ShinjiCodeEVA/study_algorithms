@@ -7,14 +7,14 @@ export const MainContentWrapper = ({children}: MainContentProps) => {
   const {isSideBarVisible, toggleSideBar} = useSideBar();
 
   return (  
-    <div className="font-body-font"> 
+    <div className="font-body-font desktop:mr-0 min-w-[280px]"> 
       <SideBar 
         isSideBarVisible={isSideBarVisible}
         position="left"/>
       <AppBar 
         isSideBarVisible={isSideBarVisible}
         toggleSideBar={toggleSideBar}/>
-      <div className="text-dark-gray text-xs ml-[370px] mt-10">{`Home   >   Arrays`}</div>  
+      <div className="text-dark-gray text-xs ml-10 laptop:ml-[370px] mt-10">{`Home   >   Arrays`}</div>  
       <div className={`flex flex-col desktop:flex-row ml-0 laptop:ml-[330px]`}>
         {children}
         <SideBar position="right"/>

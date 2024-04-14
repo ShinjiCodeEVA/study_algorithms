@@ -10,7 +10,7 @@ export const Description = ({problem}: DescriptionProp) => {
     <div className="flex flex-col gap-4">
         <div>
             <h1 className="text-2xl text-slate-blue font-semibold">{`[${platform}] - ${title}`}</h1>
-            <div className="flex text-sm text-gray-400 items-center gap-4 mt-2">
+            <div className="flex flex-wrap text-sm text-gray-400 items-center gap-4 mt-2">
                 <div className="text-xs">
                     by
                     <span className="text-black ml-2">Harvie</span>
@@ -42,7 +42,7 @@ export const Description = ({problem}: DescriptionProp) => {
             <img 
                 src={image} 
                 alt=""
-                className="max-w-[400px] object-cover"/>
+                className="max-w-[400px] w-full object-cover"/>
             <small className="text-gray-400">Figure: {title}</small>
         </div>
 

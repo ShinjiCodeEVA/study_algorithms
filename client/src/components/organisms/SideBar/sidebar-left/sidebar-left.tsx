@@ -18,7 +18,7 @@ export const SideBarLeft = (props: SideBarLeftProp) => {
 
 
   return (
-    <div className={`w-[330px] border h-screen px-4 py-7 fixed sidepanel bg-white ${isSideBarVisible ? 'show' : 'hide'}`}>
+    <div className={`w-[330px] border h-full px-4 py-7 fixed sidepanel bg-white ${isSideBarVisible ? 'show' : 'hide'}`}>
       <div>
         <img src="https://studyalgorithms.com/wp-content/uploads/2014/07/3.png" alt="" />
       </div>

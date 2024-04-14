@@ -24,4 +24,14 @@
 
 .indent {
     text-indent: -15px; 
-  }
+}
+
+#root {
+    @apply  min-w-[280px]  overflow-hidden;
+}
+
+.side-sticky {
+    top: 0;
+    position: -webkit-sticky; 
+    position: sticky;
+}

@@ -19,7 +19,7 @@ export const SidebarRight = (props: SideBarRightProp) => {
   }
 
   return (
-    <div className={`py-16 pr-6 w-full ml-8 desktop:ml-0`}>
+    <div className={`py-16 pr-6 ml-8 desktop:ml-0 w-full desktop:w-[300px] `}>
         <div >
           <Label 
             text="VIDEOS"

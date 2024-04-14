@@ -41,7 +41,7 @@ export const arrays = [
             complexity: "This approach allows you to keep track of both the maximum and minimum product at each step, considering the possibility of negative numbers and the potential of changing the product’s sign."
         },
         code: {
-            replit: "#"
+            replit: "https://replit.com/@HarviePurgatori/RadiantCelebratedAccess?embed=true"
         }     
     },
     {
