@@ -15,6 +15,10 @@ export default {
         'dark-gray': "#757575",
         'slate-blue': "#0b6bbf",
         'slate-black': "#313131"
+      },
+      screens: {
+        'laptop': "950px",
+        'desktop': "1245px"
       }
     },
   },

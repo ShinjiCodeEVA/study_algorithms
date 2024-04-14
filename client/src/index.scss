@@ -3,3 +3,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.triangle {
+    @apply w-[60px] h-[60px] bg-slate-blue fixed left-0 top-0;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
+
+.sidepanel {
+    @apply transition-transform;
+}
+
+.hide {
+    @apply -translate-x-full;
+} 
+
+.show {
+    @apply transform-none;
+}  
+
+.indent {
+    text-indent: -15px; 
+  }

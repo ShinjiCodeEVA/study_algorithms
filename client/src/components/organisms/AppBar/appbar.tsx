@@ -7,6 +7,8 @@ import { PiYoutubeLogo } from "react-icons/pi";
 import { MdOutlineMail } from "react-icons/md";
 import { VscGithub } from "react-icons/vsc";
 import { IoLogoStackoverflow } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { AppBarProp } from ".";
 
 const socs = [
     {name: "facebook", link: "#", icon: <RiFacebookFill className="text-sm" />},
@@ -17,16 +19,27 @@ const socs = [
     {name: "stackoverflow", link: "#", icon: <IoLogoStackoverflow />}
 ]
 
-export const AppBar = () => {
+export const AppBar = ({toggleSideBar}: AppBarProp) => {
+    
+    
   return (
-    <header className={`bg-slate-black flex items-center justify-between ml-[330px] text-white px-9 `}>
-        <div className={`text-xs flex items-center gap-3 font-semibold`}>
-            <div className="bg-slate-blue py-2 px-3">
-                <p>TOP POSTS</p>
-            </div>
-            <div className={`flex items-center text-[12px] text-dark-gray cursor-pointer`}>
-                <Icon><FaAngleLeft className="hover:text-white" /></Icon>
-                <Icon><FaAngleRight className="hover:text-white" /></Icon>
+    <header className={`bg-slate-black flex lg:flex-row gap-4 lg:gap-0 flex-col py-3 lg:py-0 items-center justify-center lg:justify-between laptop:ml-[330px] text-white px-9 mr-[-30px] desktop:mr-0`}>
+        <div 
+            className="triangle desktop:pointer-events-none"
+            onClick={toggleSideBar} >
+            <Icon>
+                <RxHamburgerMenu className="text-[26px] font-semibold absolute top-1 left-1" />
+            </Icon>
+        </div>
+        <div className={`text-xs flex lg:flex-row flex-col items-center gap-3 font-semibold`}>
+            <div className="flex items-center gap-2">
+                <div className="bg-slate-blue py-2 px-3">
+                    <p>TOP POSTS</p>
+                </div>
+                <div className={`flex items-center text-[12px] text-dark-gray cursor-pointer`}>
+                    <Icon><FaAngleLeft className="hover:text-white" /></Icon>
+                    <Icon><FaAngleRight className="hover:text-white" /></Icon>
+                </div>
             </div>
             <p>[LEETCODE-NUMBERS SMALLER THAN]</p>
         </div>
@@ -36,7 +49,7 @@ export const AppBar = () => {
             <ul className={`text-base flex items-center gap-3`}>
                 {socs.map((soc) => {
                     return(
-                        <li>
+                        <li key={soc.name}>
                             <Icon>{soc.icon}</Icon>
                         </li>
                     )

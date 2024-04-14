@@ -13,10 +13,37 @@ export type NewsLetterType = {
     email: string;
 } 
 
+export type TestCaseType = {
+    input: string;
+    output: string;
+    explanation: string;
+}
+
 export type ProblemType = {
     tags: string[];
     platform: string;
     title: string;
     readTime: number;
     description: string; 
+    statement?: string;
+    image?:string;
+    testcases?: TestCaseType[]
+}
+
+export type BaseSolutionType = {
+    heading: string;
+    image?: string;
+    steps: string[]
+    complexity: string;
+}
+
+export type CodeType = {
+    replit: string;
+}
+
+export type SolutionType = {
+    problem: ProblemType;
+    bruteforce: BaseSolutionType;
+    efficient: BaseSolutionType;
+    code: CodeType;
 }

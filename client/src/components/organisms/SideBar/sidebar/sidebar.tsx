@@ -24,11 +24,13 @@ const recentPosts: RecentPostType[] = [
   {platform: "LeetCode", name: "Maximum Product Subarray Solution", date: new Date()}
 ]
 
-export const SideBar = ({position}: SidebarProp) => {
+export const SideBar = ({position, isSideBarVisible, ...rest}: SidebarProp) => {
   
   return (<>
-    {position === "left" ?
-      <SideBarLeft categories={categories}/> :
-      <SidebarRight recents={recentPosts} />}
+    <div {...rest} >
+      {position === "left" ?
+        <SideBarLeft isSideBarVisible={isSideBarVisible} categories={categories}  /> :
+        <SidebarRight recents={recentPosts}  />}
+    </div>
   </>)
 }

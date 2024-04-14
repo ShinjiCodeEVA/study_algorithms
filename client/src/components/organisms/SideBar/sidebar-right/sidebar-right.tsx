@@ -19,7 +19,7 @@ export const SidebarRight = (props: SideBarRightProp) => {
   }
 
   return (
-    <div className="w-[300px] absolute right-0 py-16 pr-6">
+    <div className={`py-16 pr-6 w-full ml-8 desktop:ml-0`}>
         <div >
           <Label 
             text="VIDEOS"
