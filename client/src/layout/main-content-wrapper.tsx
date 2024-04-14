@@ -14,7 +14,7 @@ export const MainContentWrapper = ({children}: MainContentProps) => {
       <AppBar 
         isSideBarVisible={isSideBarVisible}
         toggleSideBar={toggleSideBar}/>
-      <div className="text-dark-gray text-xs ml-10 laptop:ml-[370px] mt-10">{`Home   >   Arrays`}</div>  
+      <div className="text-dark-gray text-xs ml-10 laptop:ml-[370px] mt-7">{`Home   >   Arrays`}</div>  
       <div className={`flex flex-col desktop:flex-row ml-0 laptop:ml-[330px]`}>
         {children}
         <SideBar position="right"/>

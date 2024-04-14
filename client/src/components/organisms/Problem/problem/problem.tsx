@@ -13,7 +13,7 @@ export const Problem = ({problem, index}: ProblemProp) => {
   const {tags, platform, title, readTime, description} = problem;  
 
   return (
-    <div className={`text-slate-black ${index !== 0 ? "border-t": ""}  pt-10`}>
+    <div className={`text-slate-black ${index !== 0 ? "border-t": ""} `}>
         <Button
             className="bg-dark-gray text-white text-xs px-3 py-1">
             {tags[0]}

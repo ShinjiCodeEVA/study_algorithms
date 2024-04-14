@@ -4,4 +4,5 @@ import { CategoryType } from "../../../../common/types";
 export interface ProblemsProp {
     problems: ProblemType[];
     category: CategoryType;
+    [key: string]: unknown;
 }
