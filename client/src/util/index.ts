@@ -11,7 +11,7 @@ export function toCamelCase(str: string): string {
       
       let camelCase = "";
       
-      let alpha = 'abcdefghijklmnopqrstwxyz';
+      let alpha = 'abcdefghijklmnopqrstuvwxyz';
       alpha += alpha.toUpperCase();
       
       for (let i = 0; i < result.toString().length; i++) { 

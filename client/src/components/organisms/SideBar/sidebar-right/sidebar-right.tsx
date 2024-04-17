@@ -62,6 +62,12 @@ export const SidebarRight = (props: SideBarRightProp) => {
             })}
           </div>
         </div>
+        
+        <div className="mt-20">
+          <Label 
+            text="ADVERTISEMENT"
+          />
+        </div>
     </div>
   )
 }

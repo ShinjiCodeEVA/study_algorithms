@@ -19,7 +19,7 @@ export const Problem = ({problem, index}: ProblemProp) => {
   }
 
   return (
-    <div className={`text-slate-black ${index !== 0 ? "border-t": ""}`}>
+    <div className={`text-slate-black ${index !== 0 ? "border-t": ""} pt-4`}>
         <Button
             className="bg-dark-gray text-white text-xs px-3 py-1">
             {tags[0]}

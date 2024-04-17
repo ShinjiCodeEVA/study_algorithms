@@ -4,11 +4,12 @@ import { Button } from "../../../atoms/Button";
 import { Input } from "../../../atoms/Input";
 import { Icon } from "../../../atoms/Icon";
 import { CategoryType } from "../../../../common/types";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { SiBuymeacoffee } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 import { Routes } from "../../../../common/enums";
+
 
 export const SideBarLeft = (props: SideBarLeftProp) => {
   const {categories, isSideBarVisible} = props;
@@ -19,13 +20,24 @@ export const SideBarLeft = (props: SideBarLeftProp) => {
     setInput(phrase);
   }
 
+  const handleEnterPress = (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      navigate(`/search/${input}`); 
+      setInput('');
+    }
+
+    console.log(e.key)
+  };
+
+  
   const handleNavigate = (label: string) => {
     if (label === "home")
       navigate(`/`);
     else
       navigate(`${Routes.CATEGORY}/${label}`);
-
   }
+
+ 
 
   return (
     <div  className={`cursor-pointer w-[330px] border h-full px-4 py-7 fixed sidepanel bg-white ${isSideBarVisible ? 'show' : 'hide'}`}>
@@ -38,8 +50,10 @@ export const SideBarLeft = (props: SideBarLeftProp) => {
           value={input} 
           handleInputChange={handleSearch} 
           placeholder="Type and hit enter..." 
+          onKeyPress={handleEnterPress}
            />
-        <Icon>
+        <Icon 
+          onClick={ () => { navigate(`/search/${input}`), setInput('') }} >
           <FaMagnifyingGlass 
           className="text-gray-white"/>
         </Icon>

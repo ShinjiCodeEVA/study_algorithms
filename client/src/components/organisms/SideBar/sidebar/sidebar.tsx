@@ -1,8 +1,9 @@
 import { SidebarProp } from "./sidebar.interface"
 import { SideBarLeft } from "../sidebar-left"
 import { SidebarRight } from "../sidebar-right"
-import { CategoryType } from "../../../../common/types"
+import { CategoryType, SolutionType, ProblemType } from "../../../../common/types"
 import { RecentPostType } from "../../../../common/types"
+import { problems } from "../../../../data/problems"
 
 const categories: CategoryType[]  = [
   {label: "home", index: 0},
@@ -16,13 +17,22 @@ const categories: CategoryType[]  = [
   {label: "site map", index: 8},  
 ]
 
-const recentPosts: RecentPostType[] = [
-  {platform: "LeetCode", name: "Maximum Product Subarray Solution", date: new Date()},
-  {platform: "LeetCode", name: "Maximum Product Subarray Solution", date: new Date()},
-  {platform: "LeetCode", name: "Maximum Product Subarray Solution", date: new Date()},
-  {platform: "LeetCode", name: "Maximum Product Subarray Solution", date: new Date()},
-  {platform: "LeetCode", name: "Maximum Product Subarray Solution", date: new Date()}
-]
+const recentPosts: RecentPostType[] = []
+
+const populateRecent = (): void => { 
+  const entity = Object.keys(problems)
+                .map((key) => (problems as any)[key])
+                .map((solution) => solution
+                .map((problem: SolutionType) => {
+                  const p = problem.problem;
+                  const post = {platform: p.platform, name: p.title, date: new Date()}
+                
+                  recentPosts.push(post);
+                }))
+              
+}
+
+populateRecent();
 
 export const SideBar = ({position, isSideBarVisible, ...rest}: SidebarProp) => {
   

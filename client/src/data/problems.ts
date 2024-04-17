@@ -106,8 +106,8 @@ export const problems = {
                 platform: "LeetCode",
                 title: "Swap Nodes in Pairs",
                 readTime: 5,
-                description: "Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed).",
-                statement: "The task is to swap every two adjacent nodes in the given linked list.",
+                description: "Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed). This problem requires rearranging the links between adjacent nodes in the list, effectively swapping their positions while maintaining the same node values. The objective is to implement this swapping operation efficiently without altering the node values.",
+                statement: "The task is to swap every two adjacent nodes in the given linked list. This task involves switching the positions of every two neighboring train cars, effectively rearranging the order of the cars within the linked list. This means the node that was originally pointed to by the first node now becomes the first node, and the original first node becomes the second node, and so on.",
                 image: "https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg",
                 testcases: [
                     { input: "head = 1->2->3->4", output: "2->1->4->3", explanation: "After swapping each pair of adjacent nodes, the resulting linked list becomes 2->1->4->3." },
@@ -148,8 +148,8 @@ export const problems = {
                 platform: "LeetCode",
                 title: "Rotate List",
                 readTime: 5,
-                description: "Given a linked list, rotate the list to the right by k places, where k is a non-negative integer.",
-                statement: "The task is to rotate the given linked list to the right by k places.",
+                description: "Given a linked list, rotate the list to the right by k places, where k is a non-negative integer. This problem involves manipulating a singly-linked list such that each node is moved to the right by k places. If the rotation exceeds the length of the list, the rotation is performed as if it were a circular list, where the tail connects to the head. It's essential to handle cases where the list is empty or where k is greater than or equal to the length of the list.",
+                statement: "You're given a linked list of data points. Imagine it as a chain where each link points to the next. The task is to rearrange the chain by moving the last k links to the front, essentially rotating the list to the right by k positions.",
                 image: "https://assets.leetcode.com/uploads/2020/11/13/rotate1.jpg", // Placeholder image
                 testcases: [
                     { input: "head = [1,2,3,4,5], k = 2", output: "[4,5,1,2,3]", explanation: "After rotating the linked list to the right by 2 places, the resulting linked list becomes [4,5,1,2,3]." },
@@ -181,7 +181,121 @@ export const problems = {
             code: {
                 replit: "https://replit.com/@HarviePurgatori/Rotate-List?embed=true", // Link to the solution implementation
             }
+        },
+    ],
+
+
+    // strings
+    strings: [
+        {
+            problem: {
+                title: "Longest Substring Without Repeating Characters",
+                tags: ["Strings", "Sliding Window"],
+                platform: "LeetCode",
+                readTime: 5,
+                description: "Given a string s, find the length of the longest substring without repeating characters. If there are multiple longest substrings, return the length of the first one found. This problem requires determining the length of the longest substring within the given string where no character is repeated. It involves identifying substrings that contain distinct characters and determining their lengths.",
+                image: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/unique_char_substr3.png",
+                statement: "The task is to find the length of the longest substring in the given string without any repeating characters. The challenge is to find the longest continuous sequence of characters within that string where no character appears more than once. It's like searching for the longest word or phrase you can create using each letter in the string only once.",
+                testcases: [
+                    {
+                        input: "s = 'geeksforgeeks'",
+                        output: "7",
+                        explanation: "The longest substring without repeating characters in 'geeksforgeeks' is 'geksfor', which has a length of 7."
+                    },
+                    {
+                        input: "s = 'abcabcbb'",
+                        output: "3",
+                        explanation: "The longest substring without repeating characters in 'abcabcbb' is 'abc', which has a length of 3."
+                    }
+                ]
+            },
+            bruteforce: {
+                heading: "The brute force approach involves checking all possible substrings for each character in the string.",
+                steps: [
+                    "Initialize a variable to store the maximum length of the substring without repeating characters.",
+                    "Iterate through each character in the string.",
+                    "For each character, start a new substring from that character and check if it contains any repeating characters.",
+                    "If the substring does not contain any repeating characters, update the maximum length.",
+                    "Repeat this process for all characters in the string.",
+                    "Return the maximum length found."
+                ],
+                complexity: "This approach has a time complexity of O(n^3), where n is the length of the string, as it involves checking all possible substrings.",
+            },
+            efficient: {
+                heading: "An efficient approach is to use a sliding window technique.",
+                image: "https://favtutor.com/resources/images/uploads/mceu_28165975511699020966300.png",
+                steps: [
+                    "Initialize two pointers, start and end, to define the current substring.",
+                    "Initialize a set to keep track of characters in the current substring.",
+                    "Move the end pointer to the right, expanding the current substring, until a repeating character is found or the end of the string is reached.",
+                    "If a repeating character is found, move the start pointer to the right, shrinking the current substring, until the repeating character is no longer in the substring.",
+                    "Keep track of the maximum length of the substring without repeating characters during this process.",
+                    "Repeat steps 3-5 until the end pointer reaches the end of the string.",
+                    "Return the maximum length found."
+                ],
+                complexity: "This approach has a time complexity of O(n), where n is the length of the string, as it involves iterating through the string only once.",
+            },
+            code: {
+                implementation: "class Solution {\n    public int lengthOfLongestSubstring(String s) {\n        int max = 0;\n        for (int i = 0; i < s.length(); i++) {\n            String current = \"\" + s.charAt(i);\n            for (int j = i + 1; j < s.length(); j++) {\n                if (!current.contains(\"\" + s.charAt(j)))\n                    current += s.charAt(j);\n                else\n                    break;\n            }\n            max = Math.max(max, current.length());\n        }\n        return max;\n    }\n}",
+                replit: "https://replit.com/@HarviePurgatori/LSWP?embed=true",
+            }
         }
+    ],
+
+
+    // trees
+    trees: [
+            {
+                problem: {
+                    title: "Symmetric Tree",
+                    tags: ["Trees", "Depth-First Search"],
+                    platform: "LeetCode",
+                    readTime: 7,
+                    description: "Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center). This problem involves determining whether a binary tree is symmetric, meaning that it is a mirror image of itself around its center. To solve this problem, we need to compare the left subtree of the tree with its right subtree, ensuring that they mirror each other.",
+                    statement: "The task is to determine whether the given binary tree is symmetric. The task is to check if this tree is a mirror image of itself.  Think of folding the tree vertically down the middle. If the left and right sides perfectly mirror each other, then the tree is considered symmetric.",
+                    image: "https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg",
+                    testcases: [
+                        {
+                            input: "[1,2,2,3,4,4,3]",
+                            output: "true",
+                            explanation: "The binary tree [1,2,2,3,4,4,3] is symmetric, as its left and right subtrees are mirror images of each other."
+                        },
+                        {
+                            input: "[1,2,2,null,3,null,3]",
+                            output: "false",
+                            explanation: "The binary tree [1,2,2,null,3,null,3] is not symmetric, as its left and right subtrees do not mirror each other."
+                        }
+                    ]
+                },
+                bruteforce: {
+                    heading: "The brute force approach involves traversing the tree and comparing each corresponding pair of nodes.",
+                    steps: [
+                        "Traverse the tree using depth-first search.",
+                        "At each node, compare its left child with the right child.",
+                        "If the values of corresponding nodes are not equal, return false.",
+                        "Repeat steps 2-3 until all nodes are processed.",
+                        "Return true if all corresponding nodes are equal, indicating that the tree is symmetric."
+                    ],
+                    complexity: "This approach has a time complexity of O(n), where n is the number of nodes in the tree, as it involves traversing each node once."
+                },
+                efficient: {
+                    heading: "An efficient approach is to perform a recursive comparison of left and right subtrees.",
+                    image: "https://media.geeksforgeeks.org/wp-content/uploads/20200427100759/output241.png",
+                    steps: [
+                        "Define a recursive function that takes two nodes as input.",
+                        "Base case: If both nodes are null, return true.",
+                        "If one node is null and the other is not, or their values are not equal, return false.",
+                        "Recursively compare the left subtree of the left node with the right subtree of the right node, and vice versa.",
+                        "Return true if both recursive calls return true, indicating that the subtrees are symmetric.",
+                        "Repeat this process until all nodes are compared."
+                    ],
+                    complexity: "This approach has a time complexity of O(n), where n is the number of nodes in the tree, as it involves traversing each node once."
+                },
+                code: {                   
+                    replit: "https://replit.com/@HarviePurgatori/SymmetricTree?embed=true"
+                }
+            }
+        
     ]
 }
 
