@@ -7,18 +7,28 @@ import { CategoryType } from "../../../../common/types";
 import { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { SiBuymeacoffee } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
+import { Routes } from "../../../../common/enums";
 
 export const SideBarLeft = (props: SideBarLeftProp) => {
   const {categories, isSideBarVisible} = props;
   const [input, setInput] = useState('');
+  const navigate = useNavigate();
 
   const handleSearch = (phrase: string) => {
     setInput(phrase);
   }
 
+  const handleNavigate = (label: string) => {
+    if (label === "home")
+      navigate(`/`);
+    else
+      navigate(`${Routes.CATEGORY}/${label}`);
+
+  }
 
   return (
-    <div className={`w-[330px] border h-full px-4 py-7 fixed sidepanel bg-white ${isSideBarVisible ? 'show' : 'hide'}`}>
+    <div  className={`cursor-pointer w-[330px] border h-full px-4 py-7 fixed sidepanel bg-white ${isSideBarVisible ? 'show' : 'hide'}`}>
       <div>
         <img src="https://studyalgorithms.com/wp-content/uploads/2014/07/3.png" alt="" />
       </div>
@@ -40,7 +50,8 @@ export const SideBarLeft = (props: SideBarLeftProp) => {
           return <Category
                   key={category.label}
                   label={category.label}
-                  index={index} />
+                  index={index} 
+                  onNavigate={handleNavigate}/>
         })}
       </div>
 

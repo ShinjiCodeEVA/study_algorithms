@@ -5,8 +5,6 @@ import { Button } from "../../atoms/Button";
 export const Description = ({problem, parent}: DescriptionProp) => {
   const {tags, platform, title, readTime, image, statement, testcases} = problem;  
 
-  console.log(testcases)
-
   return (
     <div className="flex flex-col gap-4">
         <div>

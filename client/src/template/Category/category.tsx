@@ -1,14 +1,25 @@
 import { Problems } from "../../components/organisms/Problem/problem-list"
-import { arrays } from "../../data/problems"
+import { useFetchViewedCategories } from "../../hooks/statics/useFetchViewedCategories"
+import { useParams } from "react-router-dom"
+import { useEffect } from "react"
 
 export const Category = () => {
 
+  const {getCategories, viewedCategories} = useFetchViewedCategories();
+  const {name} = useParams();
+
+  useEffect(() => {
+    if (name) 
+      getCategories(name)
+  }, [name])
+
   return (
     <div>
-      <Problems 
-        problems={arrays} 
-        category={{label: 'arrays'}}
-        className="px-4 desktop:px-9 "/>
+      {viewedCategories ? 
+       <Problems 
+       problems={viewedCategories} 
+       category={{label: name || "loading"}}
+       className="px-4 desktop:px-9 "/> : "Loading"}
     </div>
   )
 }

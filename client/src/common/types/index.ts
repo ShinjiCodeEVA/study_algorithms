@@ -27,7 +27,9 @@ export type ProblemType = {
     description: string; 
     statement?: string;
     image?:string;
-    testcases?: TestCaseType[]
+    testcases?: TestCaseType[];
+    [key: string]: unknown;
+   
 }
 
 export type BaseSolutionType = {

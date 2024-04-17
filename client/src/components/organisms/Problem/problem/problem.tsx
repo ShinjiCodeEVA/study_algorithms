@@ -8,12 +8,18 @@ import { IoMdMail } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FaWhatsapp } from "react-icons/fa";
+import { useNavigator } from "../../../../hooks/useNavigator";
 
 export const Problem = ({problem, index}: ProblemProp) => {
   const {tags, platform, title, readTime, description} = problem;  
+  const navigator = useNavigator();
+  
+  const handleNavigate = () => { 
+    navigator(`/${tags[0]}/${title}`);
+  }
 
   return (
-    <div className={`text-slate-black ${index !== 0 ? "border-t": ""} `}>
+    <div className={`text-slate-black ${index !== 0 ? "border-t": ""}`}>
         <Button
             className="bg-dark-gray text-white text-xs px-3 py-1">
             {tags[0]}
@@ -32,6 +38,7 @@ export const Problem = ({problem, index}: ProblemProp) => {
             {description}
         </article>
         <Button 
+            onClick={handleNavigate}
             className="flex text-xs font-semibold items-center gap-3 bg-slate-blue text-white py-2 px-3 mt-4">
             <span>READ MORE</span>
             <Icon  className="text-xs flex items-center " >
