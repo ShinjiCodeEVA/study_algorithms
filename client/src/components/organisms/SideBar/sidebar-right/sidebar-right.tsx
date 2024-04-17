@@ -16,6 +16,7 @@ export const SidebarRight = (props: SideBarRightProp) => {
 
   const handleSubmit = (formData: NewsLetterType) => {
     setNewsLetterEmail(formData);
+    console.log(newsLetterEmail);
   }
 
   return (

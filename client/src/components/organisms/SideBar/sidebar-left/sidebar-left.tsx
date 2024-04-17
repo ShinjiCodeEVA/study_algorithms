@@ -4,7 +4,7 @@ import { Button } from "../../../atoms/Button";
 import { Input } from "../../../atoms/Input";
 import { Icon } from "../../../atoms/Icon";
 import { CategoryType } from "../../../../common/types";
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { SiBuymeacoffee } from "react-icons/si";
 import { useNavigate } from "react-router-dom";

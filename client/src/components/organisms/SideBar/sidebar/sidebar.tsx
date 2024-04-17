@@ -1,7 +1,7 @@
 import { SidebarProp } from "./sidebar.interface"
 import { SideBarLeft } from "../sidebar-left"
 import { SidebarRight } from "../sidebar-right"
-import { CategoryType, SolutionType, ProblemType } from "../../../../common/types"
+import { CategoryType, SolutionType } from "../../../../common/types"
 import { RecentPostType } from "../../../../common/types"
 import { problems } from "../../../../data/problems"
 
@@ -20,7 +20,7 @@ const categories: CategoryType[]  = [
 const recentPosts: RecentPostType[] = []
 
 const populateRecent = (): void => { 
-  const entity = Object.keys(problems)
+  Object.keys(problems)
                 .map((key) => (problems as any)[key])
                 .map((solution) => solution
                 .map((problem: SolutionType) => {

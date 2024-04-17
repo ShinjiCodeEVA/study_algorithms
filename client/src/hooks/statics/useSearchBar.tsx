@@ -28,7 +28,7 @@ export const useSearchBar = () => {
         else { 
             let resVal: ProblemType[] = [];
 
-            const res = Object.keys(problems)
+            Object.keys(problems)
             .map((key) => (problems as any)[key]) 
             .map((solution) => solution
             .map((p: SolutionType) => {

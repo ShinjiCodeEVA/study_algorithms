@@ -25,7 +25,7 @@ const socs = [
 const posts: string[] = []
 
 const populateRecent = (): void => { 
-  const entity = Object.keys(problems)
+  Object.keys(problems)
                 .map((key) => (problems as any)[key])
                 .map((solution) => solution
                 .map((problem: SolutionType) => {
