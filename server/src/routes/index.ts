@@ -1,10 +1,8 @@
-import express from 'express'
-import { getProblems, insertProblem } from '../api/problem.js';
+import { problem } from '../api/problem.js';
+import { AppRoutes } from '../types/index.js';
 
-const router = express.Router();
+const routes: AppRoutes[] = [
+    {path: '/problems', methods: ["GET", "POST"], handler: problem},
+]
 
-router.get('/problems', getProblems);
-
-router.post('/problems/create', insertProblem);
-
-export default router;
+export default routes;

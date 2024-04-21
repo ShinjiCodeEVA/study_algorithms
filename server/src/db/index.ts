@@ -1,5 +1,4 @@
 import mysql from 'mysql2/promise'
-import { RowDataPacket, ResultSetHeader } from 'mysql2/promise';
 
 
 class Database { 
