@@ -4,6 +4,7 @@ import problemsRouter from './routes/index.js'
 
 dotenv.config();
 const app = express();
+app.use(express.json());
 
 app.use('/api', problemsRouter);
 

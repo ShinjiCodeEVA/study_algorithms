@@ -1,4 +1,6 @@
 import mysql from 'mysql2/promise'
+import { RowDataPacket, ResultSetHeader } from 'mysql2/promise';
+
 
 class Database { 
     private static instance: Database;
@@ -40,10 +42,12 @@ class Database {
      * @param values 
      * @returns 
      */
+
     public async query<T>(query: string, values?: any[]) { 
         const [rows] = await Database.pool.query(query, values);
-        return rows as T
+        return rows as T;
     }
+    
 } 
 
 export default Database;
