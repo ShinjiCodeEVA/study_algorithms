@@ -25,6 +25,12 @@ async function getProblems(req: Request, res: Response): Promise<void> {
         // if getting problems by category
         if (!problem_id  && params) { 
             const problemsByCategory = await Problem.getByCategory(params.substring(0, 1).toUpperCase() + params.substring(1));
+            
+            if (problemsByCategory.length == 0) { 
+                res.status(500).json({success: false, message: 'Problems not found', data: problemsByCategory});
+                return;
+            }
+
             res.status(200).json({success: true, message: 'Problems found', data: problemsByCategory});
             return;
         }

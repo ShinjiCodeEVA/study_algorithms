@@ -15,7 +15,7 @@ class HttpAdapterAxiosImpl implements HttpAdapter {
                     'Accept': 'application/json',
                 }
             })
-        } else { 
+        } else {   
             this.axios = axios;
         }
     }
@@ -24,7 +24,7 @@ class HttpAdapterAxiosImpl implements HttpAdapter {
         try {
             // config here if any 
 
-            return this.axios?.get(url, {});
+            return this.axios?.get(url, options);
         } catch (err) {
             throw err;
         }

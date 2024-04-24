@@ -18,7 +18,9 @@ export const Problem = ({problem, index}: ProblemProp) => {
     navigator(`/${tags[0]}/${title}`);
   }
 
-  return (
+  //console.log(problem)
+
+  return ( 
     <div className={`text-slate-black ${index !== 0 ? "border-t": ""} pt-4`}>
         <Button
             className="bg-dark-gray text-white text-xs px-3 py-1">
